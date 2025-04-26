@@ -5,6 +5,7 @@ const sequelize = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const bloodbankRoutes = require('./routes/bloodbankRoutes');
 const donationRoutes = require('./routes/donationRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 const receiverRoutes = require('./routes/receiverRoutes');
 
@@ -20,6 +21,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/bloodbanks', bloodbankRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/receivers', receiverRoutes);
+app.use('/api/admin', adminRoutes);
 const PORT = process.env.PORT || 5000;
 
 sequelize.sync().then(() => {
