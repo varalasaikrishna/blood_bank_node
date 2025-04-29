@@ -6,8 +6,11 @@ const userRoutes = require('./routes/userRoutes');
 const bloodbankRoutes = require('./routes/bloodbankRoutes');
 const donationRoutes = require('./routes/donationRoutes');
 const adminRoutes = require('./routes/adminRoutes');
-
+const contactRoutes   = require('./routes/contactRoutes');
 const receiverRoutes = require('./routes/receiverRoutes');
+const forumRoutes        = require('./routes/forumRoutes');
+const commentRoutes      = require('./routes/commentRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 const cors = require('cors');
 app.use(express.json());
@@ -22,6 +25,10 @@ app.use('/api/bloodbanks', bloodbankRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/receivers', receiverRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/contact', contactRoutes);
+app.use('/api/forum',         forumRoutes);
+app.use('/api/forum',         commentRoutes);
+app.use('/api/notifications', notificationRoutes);
 const PORT = process.env.PORT || 5000;
 
 sequelize.sync().then(() => {
