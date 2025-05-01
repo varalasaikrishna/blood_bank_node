@@ -11,6 +11,7 @@ const receiverRoutes = require('./routes/receiverRoutes');
 const forumRoutes        = require('./routes/forumRoutes');
 const commentRoutes      = require('./routes/commentRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
+const statsRoutes    = require('./routes/statisticsRoutes');
 
 const cors = require('cors');
 app.use(express.json());
@@ -29,6 +30,8 @@ app.use('/api/contact', contactRoutes);
 app.use('/api/forum',         forumRoutes);
 app.use('/api/forum',         commentRoutes);
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/admin/stats', statsRoutes);
+
 const PORT = process.env.PORT || 5000;
 
 sequelize.sync().then(() => {
